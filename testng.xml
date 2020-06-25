@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Email Automation" parallel="false">
+	<listeners>
+		<listener class-name="com.webarooAutomation.GupshupCustomReportListener" />
+		<listener class-name="com.webarooAutomation.GupshupCustomTestListener" />
+	</listeners>
+	<test name="SentEmail Test">
+		<classes>
+			<class name="com.webarooAutomation.Browser"></class>
+			<class name="com.webarooAutomation.SignUpHeaders"></class>
+			<class name="com.webarooAutomation.Login"></class>
+			<class name="com.webarooAutomation.LoginPageHeaders"></class>
+			<class name="com.webarooAutomation.SentEmail"></class>
+			<class name="com.webarooAutomation.UploadEmailSent"></class>
+			<class name="com.webarooAutomation.MailingListCreation"></class>
+			
+			<!-- add class here like above   okk and add classes under -->
+		</classes>
+	</test>
+</suite>

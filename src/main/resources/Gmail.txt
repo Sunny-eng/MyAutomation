@@ -1,0 +1,103 @@
+package webdriver_Gmail;
+
+
+import java.io.IOException;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class GmailLoginTest {
+
+	public static void main(String[] args) throws IOException, InterruptedException{
+		// TODO Auto-generated method stub
+	boolean done;
+	
+		FirefoxDriver driver= new FirefoxDriver ();
+		
+		driver.get("http://www.gmail.com");
+		
+		System.out.println("_________________Gmail Login Test___________________________");
+		
+		//create a reference object of Gmail_Code_Login
+		GmailLogin_Code gl=new GmailLogin_Code();
+		//Create a reference object of Handle_Window
+		Handle_Window HW = new Handle_Window();
+		
+		
+		
+		System.out.println("=========================================Test:1===============================");
+		//login with correct passw
+		Thread.sleep(5000);
+		done=gl.Check_field(driver);
+		if  (done =true)
+		{
+			System.out.println("I have tested the different field and now i am entering into new test 2");
+		} else{
+		 	  System.out.println("Oops! Unable to test. Please Test");   
+		      }
+		
+		
+		System.out.println("=========================================Test:2===============================");
+		Thread.sleep(5000);
+		gl.Null_Emailid(driver);
+		if  (done =true)
+		{
+			System.out.println("Enter Email and enter for new test :----------------------\n");
+		} else{
+		 	  System.out.println("Oops! Unable to test. Please Test");   
+		      }
+		
+
+		System.out.println("=========================================Test:3===============================");
+		Thread.sleep(5000);
+		gl.Null_Pass(driver);
+		if  (done =true)
+		{
+			System.out.println("Enter password");
+		} else{
+		 	  System.out.println("Oops! Unable to test. Please Test");   
+		      }
+		
+		
+		
+		
+		//Gmail login test with Invalid ID 
+		
+				System.out.println("=========================================Test:4===============================");
+				Thread.sleep(5000);
+				
+				gl.login_InvalidID(driver);
+				
+				done =HW.TakeScreenshot(driver);
+				
+				if  (done =true)
+				{
+					System.out.println("Sorry, Google doesn't recognize that email.Please type a valid Email id");
+				} else{
+				 	  System.out.println("Oops! Unable to test. Please Test");   
+				      }
+		
+		
+		
+		// Gmail Login Test With Wrong Password
+		System.out.println("=====================Test:5====================================================");
+		done =gl.login_Wrongpass(driver);
+		if  (done =true)
+		{
+			System.out.println("Due to wrong password unable to login. Try with correct password");
+		} else{
+		 	  System.out.println("Oops! Unable to test. Please Test");   
+		      }
+		
+		
+				//Gmail Login Test With a Correct Password
+		System.out.println("=========================================Test:6===============================");
+		//login with correct password
+		Thread.sleep(5000);
+		done=gl.login_correct_pass(driver);
+		if  (done =true)
+		{
+			System.out.println("Please wait.Your Gmail page is loading");
+		} else{
+		 	  System.out.println("Oops! Unable to test. Please Test");   
+		      }	
+	}
+
+}

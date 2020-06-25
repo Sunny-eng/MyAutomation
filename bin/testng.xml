@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Email Automation" parallel="tests" >
+
+<test name="SentEmail Test">
+    <classes>
+        <class name="com.webarooAutomation.SentEmail" ></class>  
+    </classes>
+</test>
+
+</suite>
